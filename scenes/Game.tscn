@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ygbo4ly2ei43"]
+
+[ext_resource type="PackedScene" uid="uid://jvgbwnxwjj1a" path="res://scenes/player.tscn" id="1_odbo5"]
+[ext_resource type="PackedScene" uid="uid://cvkcmo1rvd33t" path="res://scenes/overworld.tscn" id="1_p7bqa"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Overworld" parent="." instance=ExtResource("1_p7bqa")]
+
+[node name="Player" parent="." instance=ExtResource("1_odbo5")]
+position = Vector2(-930, -16)
+up_direction = Vector2(1, -1.66667e-05)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)

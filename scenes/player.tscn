@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://jvgbwnxwjj1a"]
+
+[ext_resource type="Texture2D" uid="uid://cs5pimwya326f" path="res://assets/sprite/pg/Alister.png" id="1_g0mds"]
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_xtajx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryskx"]
+atlas = ExtResource("1_g0mds")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dscqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryskx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0ekx"]
+size = Vector2(14, 13)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_xtajx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_dscqy")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_t0ekx")
